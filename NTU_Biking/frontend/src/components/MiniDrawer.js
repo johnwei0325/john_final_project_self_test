@@ -196,8 +196,6 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
-          //TODO
-          This is Google map.
           <Outlet />
         </Typography>
       </Box>

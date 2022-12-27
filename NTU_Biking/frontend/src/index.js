@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Map from './containers/Map';
+import MyBike from './containers/MyBike';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "Map",
         element: <Map />,
+      },
+      {
+        path: "My-Bike",
+        element: <MyBike />,
       }
     ]
   },
