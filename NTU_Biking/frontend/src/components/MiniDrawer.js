@@ -22,6 +22,7 @@ import MapTwoToneIcon from '@mui/icons-material/MapTwoTone';
 import PedalBikeIcon from '@mui/icons-material/PedalBike';
 import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
+import { Link, Outlet } from "react-router-dom"
 
 const drawerWidth = 240;
 
@@ -93,7 +94,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [menuSelectedIndex, setMenuSelectedIndex] = React.useState(1);
+  const [menuSelectedIndex, setMenuSelectedIndex] = React.useState(0);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -139,28 +140,30 @@ export default function MiniDrawer() {
         <List>
           {['Map', 'My Bike', 'Notifications', 'Personal Settings'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                selected={menuSelectedIndex === index}
-                onClick={(event) => handleMenuListItemClick(event, index)}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+              <Link to={`${text.split(" ").join("-")}`}> 
+                <ListItemButton
+                  selected={menuSelectedIndex === index}
+                  onClick={(event) => handleMenuListItemClick(event, index)}
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
                   }}
                 >
-                  {index === 0 ?  <MapTwoToneIcon /> : 
-                  index === 1 ? <PedalBikeIcon /> : 
-                  index === 2 ? <NotificationsNoneTwoToneIcon /> : <AdminPanelSettingsTwoToneIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {index === 0 ?  <MapTwoToneIcon /> : 
+                    index === 1 ? <PedalBikeIcon /> : 
+                    index === 2 ? <NotificationsNoneTwoToneIcon /> : <AdminPanelSettingsTwoToneIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </Link>
             </ListItem>
           ))}
         </List>
@@ -195,6 +198,7 @@ export default function MiniDrawer() {
         <Typography paragraph>
           //TODO
           This is Google map.
+          <Outlet />
         </Typography>
       </Box>
     </Box>
