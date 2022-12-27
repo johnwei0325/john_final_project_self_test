@@ -93,6 +93,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [menuSelectedIndex, setMenuSelectedIndex] = React.useState(1);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -100,6 +101,10 @@ export default function MiniDrawer() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleMenuListItemClick = (event, index) => {
+    setMenuSelectedIndex(index);
   };
 
   return (
@@ -135,6 +140,8 @@ export default function MiniDrawer() {
           {['Map', 'My Bike', 'Notifications', 'Personal Settings'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
+                selected={menuSelectedIndex === index}
+                onClick={(event) => handleMenuListItemClick(event, index)}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
