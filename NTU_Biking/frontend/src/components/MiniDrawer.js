@@ -22,7 +22,7 @@ import MapTwoToneIcon from '@mui/icons-material/MapTwoTone';
 import PedalBikeIcon from '@mui/icons-material/PedalBike';
 import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigation } from "react-router-dom"
 
 const drawerWidth = 240;
 
@@ -195,9 +195,9 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Typography paragraph>
+        {/* <Typography paragraph> */}
           <Outlet />
-        </Typography>
+        {/* </Typography> */}
       </Box>
     </Box>
   );

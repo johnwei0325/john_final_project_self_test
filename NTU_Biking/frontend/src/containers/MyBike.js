@@ -11,6 +11,8 @@ import NTU_at_night from "../containers/images/NTU_at_night.jpg";
 //Form
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { Form, redirect } from 'react-router-dom';
+import "./buttons.css";
 
 function MyBike () {
     const [parked, setParked] = useState(true);
@@ -49,8 +51,14 @@ function MyBike () {
                 />
             </CardContent>
             <CardActions>
-                <Button size="small" onClick={()=> setParked(!parked)}>{parked? "Ride my bike" : "Park my bike"}</Button>
-                <Button size="small" onClick={()=> {}}>Back to Home</Button>
+                <Form>
+                    <button type='submit' className='button-19'
+                    onClick={()=> setParked(!parked)}>{parked? "Ride my bike" : "Park my bike"}</button>
+                </Form>
+                &nbsp;
+                <Form method="post"> 
+                    <button type='submit' className='button-19'>Back to Home</button>
+                </Form>
             </CardActions>
         </Card>        
     )
@@ -79,3 +87,9 @@ const parkingSpots = [
     {label: 'Zonghe Lecture Building 綜合教學館'},
 ]
 export default MyBike;
+export async function action(){
+    //const contact = await createContact();
+    //return { contact }
+    console.log("Called action in my bike.js")
+    return redirect("/")
+}
