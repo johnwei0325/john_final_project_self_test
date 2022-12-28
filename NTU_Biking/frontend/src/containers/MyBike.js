@@ -19,8 +19,13 @@ function MyBike () {
     const [parkLocation, setParkLocation] = useState("")
     return ( 
         <Card sx={{ maxWidth: `calc(0.8*vw)` }}>
+            <CardContent>
+                <Typography gutterBottom variant="h4" component="div">
+                    My Bike
+                </Typography>
+            </CardContent>
             <CardMedia
-                sx={{ height: `400px` }}
+                sx={{ height: `360px`, marginLeft: "10px", marginRight: "10px", borderRadius: "10px" }}
                 image={NTU_at_night}
                 title="NTU at night"
             />
@@ -35,8 +40,7 @@ function MyBike () {
                     {parkLocation}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over 6,000
-                species, ranging across all continents except Antarctica
+                
                 </Typography>
                 <br></br>
                 <Autocomplete

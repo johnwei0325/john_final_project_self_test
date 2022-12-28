@@ -37,14 +37,17 @@ const stations = [
 
 function NearestStations () {
     stations.sort((a, b) => a.dist - b.dist);
-    return (
+    return (<>
+        <Typography gutterBottom variant="h4" component="div" marginLeft="12px">
+            Nearest Stations
+        </Typography>
         <List sx={{ width: '100%', maxWidth: `calc(0.8*vw)`, bgcolor: 'background.paper' }}>
             {stations.map((stop, index) => 
             <>
             <ListItem alignItems="flex-start" justifyItems='center' sx={{height: '116px'}}>
                 <ListItemAvatar sx={{height: '80px', width: '100px'}} >
                     <Avatar alt="Remy Sharp" src={stop.src} sx={{height: '80px', width: '80px'}}/>
-                    {EE2_Building_Southside}
+                    {/* {EE2_Building_Southside} */}
                 </ListItemAvatar>
                 <ListItemText
                 primary={stop.label}
@@ -90,6 +93,7 @@ function NearestStations () {
       </ListItem>
       <Divider variant="inset" component="li" /> */}
     </List>
+    </>
     )
 }
 export default NearestStations;

@@ -15,7 +15,7 @@
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
-  margin: 0;
+  margin: '10px';
   outline: none;
   overflow: visible;
   padding: 13px 16px;
@@ -39,6 +39,8 @@
   border-width: 0 0 4px;
   bottom: -4px;
   content: "";
+  display: inline;
+  margin: '10px';
   left: 0;
   position: absolute;
   right: 0;
