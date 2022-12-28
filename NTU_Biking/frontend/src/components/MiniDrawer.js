@@ -20,7 +20,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MapTwoToneIcon from '@mui/icons-material/MapTwoTone';
 import PedalBikeIcon from '@mui/icons-material/PedalBike';
-import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
+import MyLocationTwoToneIcon from '@mui/icons-material/MyLocationTwoTone';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 import { Link, Outlet, useNavigation } from "react-router-dom"
 
@@ -138,7 +138,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Map', 'My Bike', 'Notifications', 'Personal Settings'].map((text, index) => (
+          {['Map', 'My Bike', 'Nearest Stations', 'Personal Settings'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <Link to={`${text.split(" ").join("-")}`}> 
                 <ListItemButton
@@ -159,7 +159,7 @@ export default function MiniDrawer() {
                   >
                     {index === 0 ?  <MapTwoToneIcon /> : 
                     index === 1 ? <PedalBikeIcon /> : 
-                    index === 2 ? <NotificationsNoneTwoToneIcon /> : <AdminPanelSettingsTwoToneIcon />}
+                    index === 2 ? <MyLocationTwoToneIcon /> : <AdminPanelSettingsTwoToneIcon />}
                   </ListItemIcon>
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                 </ListItemButton>

@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import Map from './containers/Map';
 import MyBike, { action as myBikeAction, } from './containers/MyBike';
+import NearestStations from './containers/NearestStations';
+import PersonalSettings from './containers/PersonalSettings';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -23,7 +25,17 @@ const router = createBrowserRouter([
         path: "My-Bike",
         element: <MyBike />,
         action: myBikeAction,
-      }
+      },
+      {
+        path: "Nearest-Stations",
+        element: <NearestStations />,
+        //action: myBikeAction,
+      },
+      {
+        path: "Personal-Settings",
+        element: <PersonalSettings />,
+        //action: myBikeAction,
+      },
     ]
   },
 ]);
