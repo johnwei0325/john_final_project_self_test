@@ -6,5 +6,15 @@
   "scripts": {
     "start": "cd frontend && yarn start",
     "server": "cd backend && yarn server"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.4.6",
+    "@react-google-maps/api": "^2.17.1",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^8.0.2",
+    "react-icons": "^4.7.1",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4",
+    "use-places-autocomplete": "^4.0.0"
   }
 }
